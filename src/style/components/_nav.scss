@@ -1,0 +1,85 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.nav {
+  @include flex-space-between;
+  align-items: center;
+  padding: 1rem;
+
+  &__links,
+  &__actions {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__link {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font: inherit;
+    color: $text-deselect;
+    transition: color 0.3s, transform 0.2s;
+    position: relative;
+    padding: 0.5rem 0;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      color: $text-color;
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      color: $text-color;
+      font-weight: bold;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $text-color;
+        animation: underlineFade 0.3s ease forwards;
+      }
+    }
+  }
+
+  &__action {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font: inherit;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:nth-child(1) {
+      @include secondary-button;
+    }
+
+    &:nth-child(2) {
+      @include primary-button;
+    }
+  }
+}
+
+// Smooth underline animation
+@keyframes underlineFade {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
