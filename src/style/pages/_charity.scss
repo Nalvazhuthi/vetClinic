@@ -1,0 +1,52 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.charity-container {
+    @include flex-center;
+
+    .charity-wrapper {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .header {
+            width: 50%;
+            font-size: 48px;
+        }
+
+        .charity-details {
+            display: flex;
+
+            .description-wrapper {
+                flex: 3;
+
+                .description {
+                    width: 70%;
+                }
+            }
+
+            .achievements {
+                flex: 1;
+                position: relative;
+
+                .achive {
+                    font-size: 2rem;
+                }
+
+                .achive-detail {
+                    width: 50%;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -20px;
+                    width: 2px;
+                    height: 100%;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}

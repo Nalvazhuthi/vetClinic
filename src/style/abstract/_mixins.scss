@@ -13,14 +13,14 @@
 }
 
 @mixin primary-button {
-  padding: 12px 32px;
+  padding: 6px 32px;
   background-color: $secondary-color;
   color: $primary-color;
   border-radius: 100px;
 }
 
 @mixin secondary-button {
-  padding: 12px 32px;
+  padding: 6px 32px;
   border: 1px solid $secondary-color;
   color: $secondary-color;
   border-radius: 100px;
@@ -56,3 +56,5 @@
   animation-timeline: view();
   animation-range: entry #{$rangeStart} cover #{$rangeEnd};
 }
+
+

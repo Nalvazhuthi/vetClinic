@@ -1,6 +1,8 @@
 @use "functions";
 
 $primary-color: #183dff;
+$primary-color-80: #3051FF;
+
 $secondary-color: #ffffff;
 
 $text-color: #ffffff;
@@ -8,3 +10,20 @@ $text-deselect: #aebbff;
 
 $major-pink: #ff60e6;
 $minor-pink: #ffadf2;
+
+$header-font-xxl: 4.5vw;
+$header-font-l: 4.5vw;
+$header-font-s: 2.5vw;
+
+$header-font: 4.5vw;
+$sub-header-font: 3.5vw;
+
+// Breakpoint map
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);

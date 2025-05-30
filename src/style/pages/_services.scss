@@ -1,0 +1,112 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.service-container {
+    @include flex-center;
+
+    .service-wrapper {
+        width: 90%;
+        background-color: $secondary-color;
+        border-radius: 24px;
+        padding: 56px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .service-group {
+
+            .group-header {
+                font-size: $header-font-s;
+                text-align: center;
+                color: #000000;
+                margin-bottom: 100px;
+                margin-top: 56px;
+                font-weight: 600;
+            }
+
+            .services-list {
+
+                display: flex;
+                gap: 24px;
+
+                .service-card {
+                    @include flex-space-between;
+                    flex-direction: column;
+                    width: calc(35% - 14px);
+                    background-color: $primary-color;
+                    border-radius: 20px;
+
+                    &:nth-child(even) {
+                        .image-wrapper {
+                            background-color: $secondary-color;
+                        }
+                    }
+
+                    .image-wrapper {
+                        width: 100%;
+                        height: 174px;
+                        background-color: $primary-color-80;
+                        position: relative;
+                        border-radius: 16px;
+
+
+
+                        img {
+                            height: 150%;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                        }
+                    }
+
+                    .service-details {
+
+                        padding: 24px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+
+                        h3 {
+                            font-weight: 600;
+                            font-size: 1.25rem
+                        }
+
+                        .details-explore {
+                            @include flex-center;
+                            @include secondary-button;
+                            padding: 6px 32px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width: #{map-get($breakpoints, md)}) {
+
+    .service-container {
+        .service-wrapper {
+            .service-group {
+                .group-header {
+                    font-size: 4.5vw;
+                    margin-top: 0;
+                }
+
+                .services-list {
+                    flex-direction: column;
+                    gap: 90px;
+
+                    .service-card {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.doctors-container {
+    @include flex-center;
+    flex-direction: column;
+
+    .doctors-main-wrapper {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+    }
+
+
+    .header {
+        width: 50%;
+        font-size: 3.5vw;
+    }
+
+    .doctors-wrapper {
+        background-color: $primary-color-80;
+        border-radius: 24px;
+        display: flex;
+        overflow: hidden;
+
+        .doctor-details {
+            flex: 1;
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            // .description {
+            //     font-size: 2rem
+            // }
+
+            .doctor-footer {
+                @include flex-space-between;
+                align-items: end;
+            }
+        }
+
+        .doctor-image {
+            flex: 1;
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .viewAll {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: #{map-get($breakpoints, md)}) {
+    .doctors-container {
+        .doctors-main-wrapper {
+            .header {
+                width: 70%;
+                font-weight: 600;
+                font-size: 4.5vw;
+            }
+
+            .doctors-wrapper {
+                flex-direction: column;
+                // gap: 24px;
+
+                .doctor-details {
+                    flex: 0;
+
+                    gap: 24px;
+
+                    .doctor-footer {
+                        .doctor-type {
+                            flex: 1;
+                        }
+
+                        .Reviews {
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
