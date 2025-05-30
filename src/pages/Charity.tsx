@@ -1,6 +1,20 @@
 import React from "react";
+import circleOfLife from "../assets/charity/circleOfLife.png";
+import friendly from "../assets/charity/friendly.png";
+import goodHands from "../assets/charity/goodHands.png";
+import happySmile from "../assets/charity/happySmile.png";
+import healthyAtmosphere from "../assets/charity/healthyAtmosphere.png";
+import together from "../assets/charity/together.png";
 
 const Charity = () => {
+  const charities = [
+    { description: "Happy Smile Foundation", image: happySmile },
+    { description: "Healthy Atmosphere Foundation", image: healthyAtmosphere },
+    { description: "Friendly Hand Foundation", image: friendly },
+    { description: "We Are Together Foundation", image: together },
+    { description: "Circle of Life Foundation", image: circleOfLife },
+    { description: "Good Hands Foundation", image: goodHands },
+  ];
   return (
     <div className="charity-container">
       <div className="charity-wrapper">
@@ -28,7 +42,14 @@ const Charity = () => {
         </div>
         <div className="charity-collab">
           <div className="head">Collaborate with popular brand</div>
-          <div className="card"></div>
+          <div className="card-wrapper">
+            {charities.map((charity, index) => (
+              <div className="card">
+                <div className="description">{charity.description}</div>
+                <img src={charity.image} alt="" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -36,3 +57,7 @@ const Charity = () => {
 };
 
 export default Charity;
+
+
+
+

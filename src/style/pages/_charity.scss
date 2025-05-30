@@ -48,5 +48,95 @@
                 }
             }
         }
+
+        .charity-collab {
+            // display: flex;
+            flex: 1;
+
+            .head {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+
+            .card-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .card {
+                    width: 250px; // Fixed width for consistent sizing
+                    height: 120px; // Fixed height
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 10px;
+                    background-color: $primary-color-80;
+                    box-sizing: border-box;
+
+                    .description {
+                        font-weight: 600;
+                        flex: 1;
+                        margin-right: 10px;
+                    }
+
+                    img {
+                        max-width: 80px;
+                        height: auto;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width: #{map-get($breakpoints, md)}) {
+    .charity-container {
+        .charity-wrapper {
+            .header {
+                width: 80%;
+                font-size: 8vw;
+            }
+
+            .charity-details {
+                flex-direction: column;
+                gap: 20px;
+
+                .achievements {
+                    @include flex-center;
+                    flex-direction: column;
+
+                    .achive-detail {
+                        text-align: center;
+                    }
+
+                    &::before {
+                        top: -10px;
+                        width: 80%;
+                        height: 2px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                    }
+                }
+            }
+
+            .charity-collab {
+                .head {
+                    width: 80%;
+                    font-size: 8vw;
+                }
+
+                .card-wrapper {
+                    .card {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }

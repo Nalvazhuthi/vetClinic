@@ -9,11 +9,11 @@ import "./style/main.scss";
 const App = () => {
   return (
     <div className="content-container">
-      {/* <Nav />
+      <Nav />
       <AboutUs />
       <Services />
       <Doctors />
-      <Equipment /> */}
+      <Equipment />
       <Charity />
     </div>
   );
