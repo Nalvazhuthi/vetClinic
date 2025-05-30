@@ -4,7 +4,7 @@ import equipment2 from "../assets/equipment/equipment2.png";
 
 const Equipment = () => {
   return (
-    <div className="equipment-container">
+    <div className="equipment-container" id="Equipment">
       <div className="header">Our doctors choose only the best equipment</div>
       <div className="equipment-grid">
         <div className="box box-1">

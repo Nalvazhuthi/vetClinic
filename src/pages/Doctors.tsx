@@ -3,7 +3,7 @@ import Button from "../component/Button";
 
 const Doctors = () => {
   return (
-    <div className="doctors-container">
+    <div className="doctors-container" id="Doctors">
       <div className="doctors-main-wrapper">
         <div className="header">
           Our doctors provide a wide range of services, from routine check-ups

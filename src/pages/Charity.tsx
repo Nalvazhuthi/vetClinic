@@ -16,7 +16,7 @@ const Charity = () => {
     { description: "Good Hands Foundation", image: goodHands },
   ];
   return (
-    <div className="charity-container">
+    <div className="charity-container" id="Charity">
       <div className="charity-wrapper">
         <div className="header">
           We collaborate with charities around the world
@@ -57,7 +57,3 @@ const Charity = () => {
 };
 
 export default Charity;
-
-
-
-

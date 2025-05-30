@@ -11,7 +11,7 @@ import Button from "../component/Button";
 
 const AboutUs = () => {
   return (
-    <div className="aboutus-container">
+    <div className="aboutus-container" id="About Us">
       <div className="header">
         We are Pet.
         <span className="contact">

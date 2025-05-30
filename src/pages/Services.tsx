@@ -57,7 +57,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="service-container">
+    <div className="service-container" id="Services">
       <div className="service-wrapper">
         {serviceGroups.map((group, index) => (
           <div key={index} className="service-group">
