@@ -37,8 +37,11 @@ const AboutUs = () => {
                 Our veterinary clinic is a compassionate and skilled facility
                 dedicated to providing high-quality medical care for pets.
               </div>
+              <div className="btn-wrapper">
+                <Button label="Services" />
+                <Button label="Review" />
+              </div>
 
-              <Button label="Services" />
             </div>
           </div>
           <div className="address">

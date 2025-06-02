@@ -2,141 +2,141 @@
 @use "../abstract/mixins" as *;
 
 .charity-container {
-    @include flex-center;
+  @include flex-center;
 
-    .charity-wrapper {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+  .charity-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 
-        .header {
-            width: 50%;
-            font-size: 48px;
-        }
-
-        .charity-details {
-            display: flex;
-
-            .description-wrapper {
-                flex: 3;
-
-                .description {
-                    width: 70%;
-                }
-            }
-
-            .achievements {
-                flex: 1;
-                position: relative;
-
-                .achive {
-                    font-size: 2rem;
-                }
-
-                .achive-detail {
-                    width: 50%;
-                }
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    left: -20px;
-                    width: 2px;
-                    height: 100%;
-                    background-color: $secondary-color;
-                }
-            }
-        }
-
-        .charity-collab {
-            // display: flex;
-            flex: 1;
-
-            .head {
-                font-size: 2.5rem;
-                margin-bottom: 10px;
-            }
-
-            .card-wrapper {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-
-                .card {
-                    width: 250px; // Fixed width for consistent sizing
-                    height: 120px; // Fixed height
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 10px;
-                    background-color: $primary-color-80;
-                    box-sizing: border-box;
-
-                    .description {
-                        font-weight: 600;
-                        flex: 1;
-                        margin-right: 10px;
-                    }
-
-                    img {
-                        max-width: 80px;
-                        height: auto;
-                        object-fit: contain;
-                    }
-                }
-            }
-        }
+    .header {
+      width: 50%;
+      font-size: 48px;
     }
+
+    .charity-details {
+      display: flex;
+
+      .description-wrapper {
+        flex: 3;
+
+        .description {
+          width: 70%;
+        }
+      }
+
+      .achievements {
+        flex: 1;
+        position: relative;
+
+        .achive {
+          font-size: 2rem;
+        }
+
+        .achive-detail {
+          width: 50%;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -20px;
+          width: 2px;
+          height: 100%;
+          background-color: $secondary-color;
+        }
+      }
+    }
+
+    .charity-collab {
+      // display: flex;
+      flex: 1;
+
+      .head {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .card-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .card {
+          width: 250px; // Fixed width for consistent sizing
+          height: 120px; // Fixed height
+          flex: 0 0 32%; // 2 items per row
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          background-color: $primary-color-80;
+          box-sizing: border-box;
+
+          .description {
+            font-weight: 600;
+            flex: 1;
+            margin-right: 10px;
+          }
+
+          img {
+            max-width: 80px;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
 }
 
-
-
-
 @media (max-width: #{map-get($breakpoints, md)}) {
-    .charity-container {
-        .charity-wrapper {
-            .header {
-                width: 80%;
-                font-size: 8vw;
-            }
+  .charity-container {
+    .charity-wrapper {
+      .header {
+        width: 80%;
+        font-size: 8vw;
+      }
 
-            .charity-details {
-                flex-direction: column;
-                gap: 20px;
+      .charity-details {
+        flex-direction: column;
+        gap: 20px;
 
-                .achievements {
-                    @include flex-center;
-                    flex-direction: column;
+        .achievements {
+          @include flex-center;
+          flex-direction: column;
 
-                    .achive-detail {
-                        text-align: center;
-                    }
+          .achive-detail {
+            text-align: center;
+          }
 
-                    &::before {
-                        top: -10px;
-                        width: 80%;
-                        height: 2px;
-                        left: 50%;
-                        transform: translate(-50%, 0);
-                    }
-                }
-            }
-
-            .charity-collab {
-                .head {
-                    width: 80%;
-                    font-size: 8vw;
-                }
-
-                .card-wrapper {
-                    .card {
-                        width: 100%;
-                    }
-                }
-            }
+          &::before {
+            top: -10px;
+            width: 80%;
+            height: 2px;
+            left: 50%;
+            transform: translate(-50%, 0);
+          }
         }
+      }
+
+      .charity-collab {
+        .head {
+          width: 80%;
+          font-size: 8vw;
+        }
+
+        .card-wrapper {
+          .card {
+            // width: 100%;
+            flex: 0 0 46%; // 2 items per row
+          }
+        }
+      }
     }
+  }
 }

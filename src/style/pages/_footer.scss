@@ -1,0 +1,47 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.footer-wrapper {
+  @include flex-center;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 30px;
+  .header {
+    text-align: center;
+    width: 50%;
+    font-size: 4.5vw;
+  }
+  .section-wrapper {
+    display: flex;
+    gap: 24px;
+    .each-section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      .section-header {
+        font-weight: 600;
+      }
+    }
+  }
+  .polices-social-wrapper {
+    padding-top: 20px;
+    border-top: 1px solid $secondary-color;
+    width: 70%;
+    @include flex-space-between;
+  }
+}
+
+@media (max-width: #{map-get($breakpoints, md)}) {
+  .footer-wrapper {
+    .section-wrapper {
+      display: none;
+    }
+    .polices-social-wrapper {
+      width: 90%;
+      .copy-write,
+      .termAndPolicy {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

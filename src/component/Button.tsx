@@ -3,11 +3,12 @@ import { ButtonArrow } from "../assets/svg/exportSvg";
 
 interface ButtonProps {
   label: string;
+  event?: any
 }
 
-const Button: React.FC<ButtonProps> = ({ label }) => {
+const Button: React.FC<ButtonProps> = ({ label, event }) => {
   return (
-    <div className="button">
+    <div className="button" onClick={event}>
       <div>{label}</div>
       <div className="icon">
         <ButtonArrow />

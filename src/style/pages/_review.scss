@@ -1,0 +1,70 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.review-container {
+  @include flex-center;
+  .review-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    .header {
+      font-size: 4.5vw;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .reviews-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 12px;
+      // height: 30vh;
+      overflow: hidden;
+      transition: all 0.2s linear;
+      height: 30vh;
+      &.view {
+        height: 50vh;
+        overflow: auto;
+      }
+      .review {
+        border-radius: 12px;
+        background-color: $secondary-color;
+        padding: 12px 20px;
+        display: grid;
+        gap: 6px;
+        &:nth-child(even) {
+          padding: 12px 20px;
+        }
+        .review-header {
+          color: $primary-color;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          img {
+            width: 40px;
+            height: 40px;
+          }
+          .userName {
+            color: #000;
+            font-weight: 600;
+          }
+        }
+        .review-message {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{map-get($breakpoints, md)}) {
+  .review-container {
+    .review-wrapper {
+      .reviews-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
