@@ -15,7 +15,6 @@ const AboutUs = () => {
       <div className="header">
         We are Pet.
         <span className="contact">
-          {" "}
           <span className="icon"></span>+1 (671) 555-0110
         </span>
       </div>
