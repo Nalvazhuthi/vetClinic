@@ -2,11 +2,11 @@ import cat1 from "../assets/about/Cat 1.png";
 import cat2 from "../assets/about/Cat 3.png";
 import dog1 from "../assets/about/Dog 1.png";
 import {
-  ButtonArrow,
   CatTail,
   HeartLeft,
   HeartRight,
 } from "../assets/svg/exportSvg";
+
 import Button from "../component/Button";
 
 const AboutUs = () => {

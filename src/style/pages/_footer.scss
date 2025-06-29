@@ -13,11 +13,16 @@
   }
   .section-wrapper {
     display: flex;
-    gap: 24px;
+    gap: 32px;
     .each-section {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 12px;
+      .section-navs {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
       .section-header {
         font-weight: 600;
       }
